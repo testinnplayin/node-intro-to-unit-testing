@@ -2,7 +2,7 @@ const should = require('chai').should();
 
 const fizzBuzzer = require('../fizzBuzzer');
 
-describe('fizzBuzzer', () => {
+describe('fizzBuzzer', function() {
 	//normal case
 	it('should take a number and give an answer based on whether it\'s divisible by 15, 5 or 3', () => {
 		const normalInputs = [
@@ -12,7 +12,7 @@ describe('fizzBuzzer', () => {
 			{ a : 4, expected : 4 }
 		];
 
-		normalInputs.forEach( (input) => {
+		normalInputs.forEach(function(input) {
 			const answer = fizzBuzzer(input.a);
 			answer.should.be.equal(input.expected);
 		});
@@ -25,7 +25,7 @@ describe('fizzBuzzer', () => {
 			['1']
 		];
 
-		badInputs.forEach( (input) => {
+		badInputs.forEach(function(input){
 			//closure IFFE that throws an error when bad input is passed to fizzBuzzer
 			(function() {
 				fizzBuzzer(input)
